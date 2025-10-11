@@ -1,4 +1,4 @@
-# 🌳 Binary Tree Traversals (Quick Revision)
+# 🌳 Binary Tree Traversals (Quick Revision) [For any problem in BT, think if you want to deal with children then come to node i.e. postorder or preorder or level order)
 
 ## ⚙️ Recursion (All O(n) time, O(n) space)
 **Base case:** if `root == NULL` → return
