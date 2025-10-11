@@ -95,3 +95,10 @@ int maxDepth(TreeNode* root) {
 - left_sum = max(0, helper(root->left)) do not consider negative values
 - right_sum = max(0, helper(root->right)) do not consider negative values
 - Update the pathSum if (root->val + left_sum + right_sum) is greater
+
+## Printing the path from the root node to the given node
+- We deal with the root first, then children hence its preorder
+- Add the root->val to the result and if its the given node return true
+- Else, call the left child if it returns true, stop otherwise call right child and return true if right child returns true
+- Else, pop_back the value from the result and return false
+- Finally return the result
