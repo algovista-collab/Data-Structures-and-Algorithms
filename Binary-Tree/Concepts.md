@@ -21,6 +21,7 @@ struct Node {
     Node* right;
     Node(int val) : data(val), left(NULL), right(NULL) {}
 };
+```
 
 ## 🔹 Traversals
 1. Depth First Search: Preorder (Root-Left-Right), Inorder (Left-Root-Right), Postorder (Left-Right-Root)
