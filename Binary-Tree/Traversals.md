@@ -73,6 +73,25 @@ int maxDepth(TreeNode* root) {
 - If st.second is 3, pop and add to postorder
 
 ## Check if same tree or symmetric tree
-- if both are null, return true
-- if either one if null, return false
+- If both are null, return true
+- If either one if null, return false
 - Compare the values && call the function with t1->left, t2->right && call the function with t1->right, t2->left
+
+## Lowest Common Ancestor
+- Return root if root is null or root is p or root is q
+- Recursive function call with left, and right
+- If left subtree is null, return right
+- If right subtree is null, return left
+- If both are not null, return root
+
+## Diameter of Binary Tree
+- In the main function, set a diameter as 0 and pass it as reference to the helper along with the root
+- In the helper function, call with left and right to get the height of both subtrees
+- After receiving the height of both subtrees, update the diameter if left_height + right_height is greater than the diameter
+
+## Maximum Path Sum
+- Similar to the diameter problem, have a global variable for the pathSum initialized to INT_MIN and update it in the helper function
+- If leaf node, returns 0 otherwise return root->val + max(left_sum, right_sum)
+- left_sum = max(0, helper(root->left)) do not consider negative values
+- right_sum = max(0, helper(root->right)) do not consider negative values
+- Update the pathSum if (root->val + left_sum + right_sum) is greater
