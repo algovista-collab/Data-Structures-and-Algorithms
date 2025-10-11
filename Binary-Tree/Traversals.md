@@ -18,19 +18,19 @@
 
 ### 🔹 Preorder
 - While stack not empty or curr not null  
-  → Go left, push curr, add val to result  
+  → Push curr, add val to result, go to left
   → When null, pop + move to right
 
 ### 🔹 Inorder
 - While stack not empty or curr not null  
   → Go left pushing nodes  
-  → When null, pop + add val → move to right
+  → When null, pop + add val to result → move to right
 
 ### 🔹 Postorder
-- Use 2 stacks (or 1 stack + visited flag)  
-  → Push root, process right before left  
-  → Reverse result
-
+- Use a stack + visited flag 
+  → Go left pushing nodes to stack
+  → When null, check if right exists → If yes, then set curr as curr->right, If no, then add to the result, set flag as curr, pop and set curr as null
+  
 ---
 
 ## ⚙️ Morris Traversal (O(n) time, **O(1)** space)
@@ -38,8 +38,8 @@
 ### 🔹 Inorder
 - While curr != NULL  
   → If no left, add val → move right  
-  → Else find predecessor → make thread → move left  
-  → When thread found, remove it → add val → move right
+  → Else find right most node of the left child, connect its right to the curr, set curr to curr->left
+  → If right is already connected to curr, set to null, push the val to the result and move to right
 
 ### 🔹 Preorder
 - Similar, but add val **before** moving left  
@@ -50,4 +50,4 @@
 ## ⚙️ Level Order (BFS)
 - Use queue (O(n) time, O(n) space)  
   → Push root  
-  → While queue not empty: pop front, add val, push left & right
+  → While queue not empty: pop front, add val to the result, push left & right if present
