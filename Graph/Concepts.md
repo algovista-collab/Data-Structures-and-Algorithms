@@ -75,71 +75,36 @@ It is especially useful in problems involving **connectivity**, such as:
 ## 7. C++ Implementation — Disjoint Set (Union-Find)
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-class DisjointSet {
-    vector<int> parent, rank;
-
+class UnionFind {
 public:
-    // Constructor
-    DisjointSet(int n) {
-        parent.resize(n);
-        rank.resize(n, 0);
-        for (int i = 0; i < n; i++) {
-            parent[i] = i;  // each node is its own parent initially
+    UnionFind(int sz) : root(sz) {
+        for (int i = 0; i < sz; i++) {
+            root[i] = i;
         }
     }
 
-    // Find function with path compression
     int find(int x) {
-        if (parent[x] == x)
-            return x;
-        return parent[x] = find(parent[x]); // path compression
+        return root[x];
     }
 
-    // Union function by rank
-    void unionByRank(int u, int v) {
-        int rootU = find(u);
-        int rootV = find(v);
-
-        if (rootU == rootV)
-            return; // already connected
-
-        if (rank[rootU] < rank[rootV]) {
-            parent[rootU] = rootV;
-        } else if (rank[rootU] > rank[rootV]) {
-            parent[rootV] = rootU;
-        } else {
-            parent[rootV] = rootU;
-            rank[rootU]++;
+    void unionSet(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        if (rootX != rootY) {
+            for (int i = 0; i < root.size(); i++) {
+                if (root[i] == rootY) {
+                    root[i] = rootX;
+                }
+            }
         }
     }
+
+    bool connected(int x, int y) {
+        return find(x) == find(y);
+    }
+
+private:
+    vector<int> root;
 };
-
-int main() {
-    DisjointSet ds(7);
-
-    ds.unionByRank(1, 2);
-    ds.unionByRank(2, 3);
-    ds.unionByRank(4, 5);
-    ds.unionByRank(6, 7);
-    ds.unionByRank(5, 6);
-
-    // Check connectivity
-    if (ds.find(3) == ds.find(7))
-        cout << "Same component\n";
-    else
-        cout << "Different components\n";
-
-    ds.unionByRank(3, 7);
-
-    if (ds.find(3) == ds.find(7))
-        cout << "Now in the same component\n";
-    else
-        cout << "Still different\n";
-
-    return 0;
-}
 ```
 
