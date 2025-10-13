@@ -87,6 +87,13 @@ public:
         return root[x];
     }
 
+    int find(int x) {
+        while (x != root[x]) {
+            x = root[x];
+        }
+        return x;
+    }
+
     void unionSet(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
@@ -96,6 +103,14 @@ public:
                     root[i] = rootX;
                 }
             }
+        }
+    }
+
+    void unionSet(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        if (rootX != rootY) {
+            root[rootY] = rootX;
         }
     }
 
