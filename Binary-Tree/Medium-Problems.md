@@ -24,3 +24,16 @@
 - LeftBoundary - return if node is null or a leaf node, else add to result, call its left child if absent, call right child
 - LeafNodes - add to result if it is a leaf node, else call left and then right
 - RightBoundary - return if node is null or a leaf node, else add to result, call its right child if absent, call left child
+
+## Maximum Width: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+- queue<pair<TreeNode*, long long>> stores root and level. The first node in every level can be stored at 0.
+- push 2*index for left child and 2*index+1 for right child. q.front().second is stored in the minIndex to avoid the overflow
+- when the for loop is entered, index = q.front().second - minIndex. So that every level starts from 0 and increases - because we only need the absolute difference between the extreme nodes in the same level and not the actual value
+
+## Amount of time to infect or burn all the nodes: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
+- call the helper function with root, minute and infected node. Recursively call the left and right child, then deal with the root
+- if the root is the infected node, update minute as minute = max(left_height, right_height) and set the depth as -1
+- else if the left_height and right_height both are postive, simply return depth as max(l,r)+1
+- else if either of them are negative which means this subtree has a infected node. Update minute as max(minute, abs(left_height)+abs(right_height)), that is the maximum distance of any node from the infected node. Return depth as min(left_height, right_height) - 1
