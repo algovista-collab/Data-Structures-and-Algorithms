@@ -37,3 +37,7 @@
 - if the root is the infected node, update minute as minute = max(left_height, right_height) and set the depth as -1
 - else if the left_height and right_height both are postive, simply return depth as max(l,r)+1
 - else if either of them are negative which means this subtree has a infected node. Update minute as max(minute, abs(left_height)+abs(right_height)), that is the maximum distance of any node from the infected node. Return depth as min(left_height, right_height) - 1
+
+## All Nodes Distance K in Binary Tree: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
+- 
