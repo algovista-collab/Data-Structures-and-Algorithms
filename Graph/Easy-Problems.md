@@ -1,17 +1,14 @@
-# Number of Provinces **TC:** O(n²), **SC:** O(n)  
-**Link:** https://leetcode.com/problems/number-of-provinces/description/
----
-## Two approaches: DFS and Union-Find
-
-### DFS
+## Number of Provinces **TC:** O(n²), **SC:** O(n)  
+- **Link:** https://leetcode.com/problems/number-of-provinces/description/
+- Two approaches: DFS and Union-Find
+- DFS
 - Keep a visited array and loop over every row.  
 - Increase count and call `dfs` function only if that row is not visited yet with `row`, `isConnected`, `visit`.  
 - In the DFS function:  
   - Set `visit[row] = true` implying it’s visited.  
   - Loop over its neighbours.  
   - If any other node is connected and not visited yet, call the DFS for that node.
-
-### Union-Find
+- Union-Find
 - Create 2 functions: `union` and `find`, implementing **path compression + union by rank**.  
 - In the main function:  
   - Fill out the `root` and `rank` vector.  
