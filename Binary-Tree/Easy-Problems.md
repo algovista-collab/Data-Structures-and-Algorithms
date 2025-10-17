@@ -102,3 +102,17 @@ int maxDepth(TreeNode* root) {
 - Else, call the left child if it returns true, stop otherwise call right child and return true if right child returns true
 - Else, pop_back the value from the result and return false
 - Finally return the result
+
+## Populate the next pointers: TC - O(n), SC - O(1)
+- https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
+- start with root, loop until its left child becomes null, inside the loop, loop again until head becomes null
+- in the inner loop, head->left->next = head->right. if (head->next) head->right->next = head->next->left. Then assign, head = head->next
+- outside the inner loop, loop the outer loop over root = root->left
+
+## Count univalue subtrees
+- https://leetcode.com/problems/count-univalue-subtrees/description/
+- Helper function called with root and count variable
+- Call the left and right child, then deal with the parent
+- if root is null, return true, else
+- check if both left and right are true, if yes then check if root->val == left->val and right->val, then return true else false
+- if either of them are false, return false
