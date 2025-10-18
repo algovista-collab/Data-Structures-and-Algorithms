@@ -20,5 +20,5 @@
 - Number of Provinces has matrix which is n*n, hence TC - O(n²), SC - O(n)
   
 ## Graph Valid Tree
-- https://leetcode.com/problems/graph-valid-tree/editorial/
+- https://leetcode.com/problems/graph-valid-tree/description/
 - 
