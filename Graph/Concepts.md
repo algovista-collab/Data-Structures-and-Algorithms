@@ -1,16 +1,16 @@
-# 🧩 Graphs and Disjoint Set Data Structure
+# Graphs and Disjoint Set Data Structure
 
 ## 1. Types of Graphs
 
-### 🔹 Undirected Graph
+### Undirected Graph
 - Edges between any two vertices do **not** have a direction.  
 - Represents a **two-way** relationship.
 
-### 🔹 Directed Graph
+### Directed Graph
 - Edges have a **direction**.
 - Represents a **one-way** relationship.
 
-### 🔹 Weighted Graph
+### Weighted Graph
 - Each edge has an associated **weight** (like time, distance, or cost).
 
 ---
@@ -23,10 +23,10 @@ In a **weighted graph**, a **negative weight cycle** exists if the sum of all th
 
 ## 3. Degree of a Vertex
 
-### 🟢 In Undirected Graphs
+### In Undirected Graphs
 - **Degree** = Number of edges connected to a vertex.
 
-### 🟣 In Directed Graphs
+### In Directed Graphs
 - **In-degree** = Number of edges **coming into** a vertex.  
 - **Out-degree** = Number of edges **going out of** a vertex.
 
@@ -40,7 +40,7 @@ It is especially useful in problems involving **connectivity**, such as:
 - Social networks
 - Kruskal’s Minimum Spanning Tree algorithm
 
-### 🧠 Key Concept
+### Key Concept
 - Each element points to a **parent**. Initially each element is its own parent.
 - The **root node** is a parent to itself.
 - Two vertices are **connected** if they share the same root.
