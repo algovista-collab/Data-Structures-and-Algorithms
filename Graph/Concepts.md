@@ -145,3 +145,59 @@ public:
 };
 ```
 
+## 7. Valid Tree in a Graph
+- There is a path and only one path between every node in the graph
+- The graph has no cycles, so edges = n-1.
+- If edges < n-1, must be disconnected and if edges > n-1, must contain cycle
+
+# 8. Graph Representation
+
+Graphs can be represented mainly in two ways:
+1. **Adjacency Matrix**
+2. **Adjacency List**
+
+---
+
+## 1. Adjacency Matrix: TC - O(V^2), SC - O(V^2)
+- A 2D array `graph[n][n]` where `graph[i][j]` represents the **presence or weight** of an edge from node `i` to node `j`.
+
+---
+
+```text
+Initialize matrix graph[n][n] with 0
+
+For each edge (u, v):
+    if undirected:
+        graph[u][v] = 1
+        graph[v][u] = 1
+    if directed:
+        graph[u][v] = 1
+    if weighted (directed or undirected):
+        graph[u][v] = weight
+        if undirected:
+            graph[v][u] = weight
+```
+
+## 2. Adjacency List: TC - O(V+E), SC - O(V+E)
+- An array (or list) of lists where each index i contains a list of neighbours of node i.
+- For weighted graphs, each neighbour is stored as a (node, weight) pair.
+
+```text
+Initialize vector<int> adj[n+1] with 0
+
+vector<int> adj[n+1];
+
+// For each edge (u, v):
+if undirected:
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+else if directed:
+    adj[u].push_back(v);
+
+// For each edge (u, v, weight):
+if undirected:
+    adj[u].push_back({v, weight});
+    adj[v].push_back({u, weight});
+else if directed:
+    adj[u].push_back({v, weight});
+```
