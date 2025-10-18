@@ -158,14 +158,14 @@ Graphs can be represented mainly in two ways:
 
 ---
 
-## 1. Adjacency Matrix: TC - O(V^2), SC - O(V^2)
+## 1. Adjacency Matrix
 - A 2D array `graph[n][n]` where `graph[i][j]` represents the **presence or weight** of an edge from node `i` to node `j`.
 
 ---
 
 ```text
 Initialize matrix graph[n][n] with 0
-
+TC - O(V^2), SC - O(V^2)
 For each edge (u, v):
     if undirected:
         graph[u][v] = 1
@@ -178,13 +178,13 @@ For each edge (u, v):
             graph[v][u] = weight
 ```
 
-## 2. Adjacency List: TC - O(V+E), SC - O(V+E)
+## 2. Adjacency List
 - An array (or list) of lists where each index i contains a list of neighbours of node i.
 - For weighted graphs, each neighbour is stored as a (node, weight) pair.
 
 ```text
 Initialize vector<int> adj[n+1] with 0
-
+TC - O(V+E), SC - O(V+E)
 vector<int> adj[n+1];
 
 // For each edge (u, v):
