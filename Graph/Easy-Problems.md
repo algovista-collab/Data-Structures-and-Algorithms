@@ -1,5 +1,5 @@
 ## Number of Provinces or Number of Connected Components
-- **Link:** https://leetcode.com/problems/number-of-provinces/description/
+- https://leetcode.com/problems/number-of-provinces/description/
 - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/
 - Two approaches: DFS and Union-Find
 - DFS: TC - O(V+E), SC - O(V)
