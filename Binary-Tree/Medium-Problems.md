@@ -31,13 +31,15 @@
 - push 2*index for left child and 2*index+1 for right child. q.front().second is stored in the minIndex to avoid the overflow
 - when the for loop is entered, index = q.front().second - minIndex. So that every level starts from 0 and increases - because we only need the absolute difference between the extreme nodes in the same level and not the actual value
 
-## Amount of time to infect or burn all the nodes: TC - O(n), SC - O(n)
-- https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
-- call the helper function with root, minute and infected node. Recursively call the left and right child, then deal with the root
-- if the root is the infected node, update minute as minute = max(left_height, right_height) and set the depth as -1
-- else if the left_height and right_height both are postive, simply return depth as max(l,r)+1
-- else if either of them are negative which means this subtree has a infected node. Update minute as max(minute, abs(left_height)+abs(right_height)), that is the maximum distance of any node from the infected node. Return depth as min(left_height, right_height) - 1
+## Construct a Binary Tree from Inorder and Preorder/Postorder: TC  - O(n), SC - O(n)
+- In the main function, create a map to store the index as value and element as key from inorder array
+- Preorder first element is always the root and postorder last element is always the root - call the recursive function with pre/postorder, inorder, start and end
+- Base case is when start > end, root is mpp[preorder[preStart]] or mpp[postorder[postStart]]
+- inorder - inStart is number of elements on the left subtree and remaining on the right subtree
+- Create a root, call the recursive function for left and right subtree with respective start and end
 
-## All Nodes Distance K in Binary Tree: TC - O(n), SC - O(n)
-- https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
-- 
+## Flatten Binary Tree: TC - O(n), SC - O(1)
+- https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+- Use Morris Traversal, but connect the rightmost node of the left child to the right child of the root
+- while (root) -> if (root->left) go to rightmost node, rightmost->right = root->right, root->right = root->left, root->left = null
+- Set root = root->right everytime
