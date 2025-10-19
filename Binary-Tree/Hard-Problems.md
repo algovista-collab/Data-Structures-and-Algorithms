@@ -17,12 +17,12 @@
 - https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
 - 
 
-## Count Complete Tree Nodes: TC - O(d^2) = O(logn)^2, SC - O(1)
+## Count Complete Tree Nodes: TC - O(d²) = O((log n)²), SC - O(1)
 - https://leetcode.com/problems/count-complete-tree-nodes/description/
 - Compute depth - call only root->left until leaf node. Depth starts from 0
-- In the last level, number of nodes is 2^d. We index the nodes from 0 to 2^d-1. Since we know last level has atleast one node, we start checking from left=1 upto right=2^d-1 (1 << d - 1) 
+- In the last level, number of nodes is 2ᵈ. We index the nodes from 0 to 2ᵈ-1. Since we know last level has atleast one node, we start checking from left=1 upto right = 2ᵈ-1 (1 << d - 1) 
 - Apply Binary Search - pivot = left + (right - left) / 2: if pivot exists that means the node exits - hence move the left to pivot+1, else right = pivot-1
-- Return total number of nodes until last level (2^d - 1) + nodes in the last level = left
+- Return total number of nodes until last level (2ᵈ - 1) + nodes in the last level = left
 - Exists function: Traverse from the root until the last level
-- Binary search is applied again from left=0 to right=2^d-1 (last level indices), if the pivot is less than the mid of these, move to root->left, right = pivot
+- Binary search is applied again from left=0 to right = 2ᵈ-1 (last level indices), if the pivot is less than the mid of these, move to root->left, right = pivot
 - If the pivot is greater than the mid of these, move to root->right, left = pivot+1
