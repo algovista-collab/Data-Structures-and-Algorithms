@@ -27,7 +27,7 @@
   If pivot exists → node exists → `left = pivot + 1`,  
   else → `right = pivot - 1`.
 - **Return:** total number of nodes until last level (2ᵈ − 1) + nodes in last level = `left`.
-- **Exists function:** Traverse from the root until the last level.
-- Binary search is applied again from `left = 0` to `right = 2ᵈ − 1` (last level indices).  
-  If the pivot is less than the mid of these → move to `root->left`, `right = pivot`.  
+- **Exists function:** Traverse from the root until the last level in for loop.
+- Start from `left = 0` to `right = 2ᵈ − 1` (last level indices) and calculate the mid.  
+  If the pivot is less than or equal to the mid of these → move to `root->left`, `right = pivot`.  
   If the pivot is greater than the mid → move to `root->right`, `left = pivot + 1`.
