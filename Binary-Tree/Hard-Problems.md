@@ -15,7 +15,12 @@
 
 ## All Nodes Distance K in Binary Tree: TC - O(n), SC - O(n)
 - https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
-- 
+- First create an unordered_map to keep track of the parent nodes. Using queue, push the curr->left and curr->right to queue and map them to their parent curr
+- Create a visited map, unordered_map<TreeNode*, bool> and set the visited[target] = true
+- Create a queue and push the target to q, run a while loop and if level == k, break
+- In the for loop based on the size of the queue, check 3 conditions - if left child is present and not visited, push to the queue and set it to true in visited
+- repeat for right child and parent_map[curr] to also go to parent
+- Once we are out of the loop, elements remaining in the queue are the nodes at distance k, pop them and put them in the result vector
 
 ## Count Complete Tree Nodes: TC - O(d²) = O((log n)²), SC - O(1)
 - https://leetcode.com/problems/count-complete-tree-nodes/description/
