@@ -19,6 +19,9 @@
 - In the main function, counter -= union(u, v) decreases if union returns 1
 - Number of Provinces has matrix which is n*n, hence TC - O(n²), SC - O(n)
   
-## Graph Valid Tree
+## Graph Valid Tree: TC - O(N⋅α(N)), SC - O(N)
 - https://leetcode.com/problems/graph-valid-tree/description/
-- 
+- If edges.size() != n-1, then return false. Because if less than n-1 it is disconnected, if more than n-1 it has cycle
+- Construct the root, rank vector. Create find(), unionSet(), connected() functions
+- Loop over the edges, if nodes are connected return false - it contains cycle
+- If not connected, then call unionSet() to make a connection
