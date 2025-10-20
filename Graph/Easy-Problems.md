@@ -3,12 +3,12 @@
 - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/
 - Two approaches: DFS and Union-Find
 - DFS: TC - O(V+E), SC - O(V)
-- Keep a visited array and loop over every row.  
-- Increase count and call `dfs` function only if that row is not visited yet with `row`, `isConnected`, `visit`.  
-- In the DFS function:  
-  - Set `visit[row] = true` implying it’s visited.  
-  - Loop over its neighbours.  
-  - If any other node is connected and not visited yet, call the DFS for that node.
+- Build a adjList and keep a visited array and loop over every vertex.  
+- Increase count and call `dfs` function only if that vertex is not visited yet with `vertex`, `adjList`, `visited`.  
+- In the DFS function(vector<int> adjList[], vertex, visited):  
+  - Set `visit[vertex] = 1` implying it’s visited.  
+  - Loop over its neighbours => i=0 to adjList[vertex].size().  
+  - If any other node is connected and not visited yet, call the DFS for that node (adjList[vertex][i]).
 - Union-Find: TC - O(V+E), SC - O(V)
 - Create 2 functions: `union` and `find`, implementing **path compression + union by rank**.  
 - In the main function:  
