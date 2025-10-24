@@ -28,6 +28,7 @@
 
 ## Find if Path Exists: TC - O(V+E), SC - O(V+E)
 - https://leetcode.com/problems/find-if-path-exists-in-graph/description/
+- Can be solved disjoint set data structure which is easier or dfs as below
 - Keep an unordered_map to store all the edges and visited unordered_set to store visited vertices
 - Loop over all the edges connected to source and go to their corresponding edges in the dfs function
 - dfs function: if vertex is already destination return true
