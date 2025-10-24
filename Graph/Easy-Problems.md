@@ -25,3 +25,11 @@
 - Construct the root, rank vector. Create find(), unionSet(), connected() functions
 - Loop over the edges, if nodes are connected return false - it contains cycle
 - If not connected, then call unionSet() to make a connection
+
+## Find if Path Exists: TC - O(V+E), SC - O(V+E)
+- https://leetcode.com/problems/find-if-path-exists-in-graph/description/
+- Keep an unordered_map to store all the edges and visited unordered_set to store visited vertices
+- Loop over all the edges connected to source and go to their corresponding edges in the dfs function
+- dfs function: if vertex is already destination return true
+- insert the vertex to visited and loop over its edges, if not visited yet call the dfs again
+- if destination is not found at all, return false
