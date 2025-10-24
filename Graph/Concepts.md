@@ -75,6 +75,11 @@ It is especially useful in problems involving **connectivity**, such as:
 
 ---
 
+### Complete Graph
+- Graph where every vertex is connected to every other vertex
+
+---
+
 ## 6. C++ Implementation — Disjoint Set
 
 ```cpp
