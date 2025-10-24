@@ -34,3 +34,10 @@
 - dfs function: if vertex is already destination return true
 - insert the vertex to visited and loop over its edges, if not visited yet call the dfs again
 - if destination is not found at all, return false
+
+## All paths from source to target: (Yet to understand time and space complexity)
+- https://leetcode.com/problems/all-paths-from-source-to-target/description/
+- keep a path and result, call dfs function with source, target, path, result, graph
+- add the source to path and if source == destination, add path to the result
+- else, run a loop over graph[node] and call dfs on its neighbour
+- in the end, path.pop_back()
