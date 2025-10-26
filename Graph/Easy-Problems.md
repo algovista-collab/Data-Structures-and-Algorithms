@@ -41,3 +41,10 @@
 - add the source to path and if source == destination, add path to the result
 - else, run a loop over graph[node] and call dfs on its neighbour
 - in the end, path.pop_back()
+
+## Clone Graph: TC - O(N+M), SC - O(N)
+- https://leetcode.com/problems/clone-graph/description/
+- unordered_map<Node*, Node*> visited which has key as original node and value as its cloned node
+- dfs function returns visited[node] if already exits or node if null
+- Else create a new Node(node->val) and run a for loop over its neighbours and call dfs function over its neighbour node
+- Once dfs returns newNode, push_back the newNode to cloned node neighbour vector
