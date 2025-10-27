@@ -16,3 +16,12 @@
 - dfs function will insert numerator to the visited, if graph[numerator] has the denominator - return the value
 - Else, check if there is a path between them by loop over the map of the numerator, skip if already exists in visited
 - call dfs recursively and if found erase the string from visited and return result, if not found return -1.0
+
+## All Paths from Source lead to Destination: TC - O(V+E), SC - O(V)
+- https://leetcode.com/problems/all-paths-from-source-lead-to-destination/description/
+- We use unordered_map<int, vector<int>> to store the vertices and their outgoing edges
+- We use vector<int> visited(n,0) to store all the nodes from 0 to n-1 and initialize them to 0 meaning not yet visited
+- dfs function returns false if visited[node] is 1, which means cycle exists and returns false if node has no outgoing edge but not a destination
+- returns true if node state is 2, i.e. already visited and the path leads to destination
+- if none of the above, set the state as 1 and run a for loop over its edges and call dfs recursively
+- if dfs returns false, immediately returns false else set the state as 2 and return true
