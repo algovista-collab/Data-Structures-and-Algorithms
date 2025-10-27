@@ -158,7 +158,7 @@ public:
 ## 7. Multigraph
 - Allows multiple edges between same pair of nodes. Parallel edges (edges=[0,1], [0,1]]) and self loops (edges=[[0,0]]) are present.
 
-# 8. Graph Representation
+## 8. Graph Representation
 
 Graphs can be represented mainly in two ways:
 1. **Adjacency Matrix**
