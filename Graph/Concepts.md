@@ -150,10 +150,13 @@ public:
 };
 ```
 
-## 7. Valid Tree in a Graph
+## 6. Valid Tree in a Graph
 - There is a path and only one path between every node in the graph
 - The graph has no cycles, so edges = n-1.
 - If edges < n-1, must be disconnected and if edges > n-1, must contain cycle
+
+## 7. Multigraph
+- Allows multiple edges between same pair of nodes. Parallel edges (edges=[0,1], [0,1]]) and self loops (edges=[[0,0]]) are present.
 
 # 8. Graph Representation
 
