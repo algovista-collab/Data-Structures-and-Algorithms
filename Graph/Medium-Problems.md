@@ -25,3 +25,11 @@
 - returns true if node state is 2, i.e. already visited and the path leads to destination
 - if none of the above, set the state as 1 and run a for loop over its edges and call dfs recursively
 - if dfs returns false, immediately returns false else set the state as 2 and return true
+
+## Shortest Path in Binary Matrix: TC - O(N), SC - O(N)
+- N is the number of cells in the matrix
+- https://leetcode.com/problems/shortest-path-in-binary-matrix/description/
+- queue<pair<int,int>>, vector<vector<int>> dirs = {{-1,-1}, {-1,0}, {0,-1}, {1,1}, {1,0}, {0,1}, {1,-1}, {-1,1}};
+- start with 0,0 and go in all directions
+- run a loop until q is empty, increment result and push the 8 adjacent cells only if the grid has 0 in them, mark them visited
+- return the result if x and y is the last cell else return -1 when the loop ends
