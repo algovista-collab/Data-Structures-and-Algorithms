@@ -164,6 +164,9 @@ Graphs can be represented mainly in two ways:
 1. **Adjacency Matrix**
 2. **Adjacency List**
 
+## Difference between DFS and BFS
+BFS is a better approach when we want to find the shortest path between 2 vertices in a graph with equal and positve weights because it traverses level wise and stops immediately when it finds the destination. DFS traverses all the paths between 2 vertices but BFS does not need to.
+
 ---
 
 ## 1. Adjacency Matrix
