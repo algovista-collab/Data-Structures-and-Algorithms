@@ -33,3 +33,11 @@
 - start with 0,0 and go in all directions
 - run a loop until q is empty, increment result and push the 8 adjacent cells only if the grid has 0 in them, mark them visited
 - return the result if x and y is the last cell else return -1 when the loop ends
+
+## Rotten Oranges: TC - O(n*m), SC - O(n*m)
+- https://leetcode.com/problems/rotting-oranges/description/
+- we store all row,col pair which have 2 as their value in the queue to count the time from them and increment fresh for cells which have 1 as their value
+- if fresh is 0 (no good oranges) return 0 else run a loop until q is empty and main a vector of 4 directions
+- run a for loop inside for the size of the q, check the boundary for all 4 directions and if the value is not 1, continue
+- if value is 1, change it to 2 meaning good orange rottens and decrement the fresh and push it to the q
+- return minute if fresh is 0 else -1
