@@ -150,10 +150,53 @@ public:
 };
 ```
 
-## 6. Valid Tree in a Graph
+## 6. Valid Tree/Spanning Tree in a Graph
 - There is a path and only one path between every node in the graph
 - The graph has no cycles, so edges = n-1.
 - If edges < n-1, must be disconnected and if edges > n-1, must contain cycle
+- **Minimum Spanning Tree**: Spanning Tree with the minimum possible total edge weight in a weighted undirected graph (there can be any number of MST in a graph)
+
+## Cut Property
+- Cut is a partition of vertices in a graph into 2 disjoint subsets and crossing edge is an edge that connects a vertex in one set with a vertex in the other set
+- Cut property states that for any cut C of the graph if the weight of an edge E in the cut set of c is strictly smaller than the weights of all other edges of the cut-set of c, then this edge belongs to all MSTs of the graph.
+
+## Proof of the Cut Property for Minimum Spanning Trees (MSTs) 🌳
+
+The Cut Property states: *For any cut $C$ of a graph $G$, if an edge $e$ in the cut-set has a strictly smaller weight than all other edges in the cut-set, then $e$ belongs to every MST of $G$.*
+
+---
+
+## Proof by Contradiction
+
+Let $G = (V, E)$ be a connected, weighted graph, and let $C$ be an arbitrary cut that partitions the vertex set $V$ into two disjoint subsets, $V_1$ and $V_2$ (i.e., $V_1 \cup V_2 = V$ and $V_1 \cap V_2 = \emptyset$).
+
+1.  **Assumption:** Let $e$ be the edge in the cut-set of $C$ with the strictly minimum weight, $w(e)$, and let $T$ be an **arbitrary Minimum Spanning Tree (MST)** of $G$ that **does not** contain the edge $e$.
+    * $e = (u, v)$, where $u \in V_1$ and $v \in V_2$.
+    * $w(e) < w(e')$ for all other edges $e'$ in the cut-set.
+
+2.  **Path Creation:** Since $T$ is a spanning tree and connects all vertices, there must be a unique path $P$ in $T$ between the vertices $u$ and $v$.
+
+3.  **Path Must Cross the Cut:** Since $u \in V_1$ and $v \in V_2$, the path $P$ must cross the cut $C$ at least once. Let $e^*$ be an edge on the path $P$ that crosses the cut $C$.
+    * $e^* \in T$ (because it is on path $P$).
+    * $e^*$ is an edge in the cut-set of $C$.
+
+4.  **Weight Comparison:** By our initial assumption, $e$ is the unique light edge in the cut-set, meaning:
+    $$w(e) < w(e^*)$$
+
+5.  **Constructing a Lighter Tree ($T'$):**
+    * Remove $e^*$ from $T$. This breaks $T$ into two disconnected components.
+    * Add $e$ to the resulting graph $T \setminus \{e^*\}$. This connects the two components, creating a new spanning tree $T'$.
+    $$T' = T \cup \{e\} \setminus \{e^*\}$$
+
+6.  **Comparing Weights:** The total weight of the new tree $T'$ is:
+    $$w(T') = w(T) - w(e^*) + w(e)$$
+
+    Since $w(e) < w(e^*)$, it follows that:
+    $$w(T') < w(T)$$
+
+7.  **Contradiction:** We have constructed a spanning tree $T'$ whose total weight is strictly less than the weight of $T$. This contradicts the initial premise that $T$ was an **Minimum** Spanning Tree.
+
+**Conclusion:** Therefore, the initial assumption that an MST $T$ does not contain the light edge $e$ must be false. **The strictly light edge $e$ must belong to every MST of the graph.**
 
 ## 7. Multigraph
 - Allows multiple edges between same pair of nodes. Parallel edges (edges=[0,1], [0,1]]) and self loops (edges=[[0,0]]) are present.
