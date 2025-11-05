@@ -32,6 +32,7 @@
 - when the for loop is entered, index = q.front().second - minIndex. So that every level starts from 0 and increases - because we only need the absolute difference between the extreme nodes in the same level and not the actual value
 
 ## Construct a Binary Tree from Inorder and Preorder/Postorder: TC  - O(n), SC - O(n)
+- https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
 - In the main function, create a map to store the index as value and element as key from inorder array
 - Preorder first element is always the root and postorder last element is always the root - call the recursive function with pre/postorder, inorder, start and end
 - Base case is when start > end, root is mpp[preorder[preStart]] or mpp[postorder[postStart]]
