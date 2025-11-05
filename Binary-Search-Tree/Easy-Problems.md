@@ -41,3 +41,10 @@
 - if both p->val > root->val and q->val > root->val, root = root->right
 - else if p->val < root->val and q->val < root->val, root = root->left
 - else return root
+
+## Convert Sorted Array to Binary Search Tree: TC - O(N), SC - O(logN)
+- https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
+- call constructTree(nums, 0, nums.size()-1);
+- if (start > end) return nullptr, idx = start + (end - start) / 2;
+- Create a TreeNode with nums[idx] and call constructTree for left and right
+- left: constructTree(nums, start, idx-1) and right: constructTree(nums, idx+1, end)
