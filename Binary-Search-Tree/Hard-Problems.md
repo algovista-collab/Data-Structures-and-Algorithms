@@ -20,4 +20,15 @@
 
 ## Merge BSTs to Create Single BST: TC - O(), SC - O()
 - https://leetcode.com/problems/merge-bsts-to-create-single-bst/description/
-- 
+  
+## Stock Price Fluctuation: TC - O(), SC - O()
+- https://leetcode.com/problems/stock-price-fluctuation/description/
+
+## My Calendar II: TC - O(), SC - O()
+- https://leetcode.com/problems/my-calendar-ii/description/
+
+## My Calender I: TC - O(), SC - O()
+- https://leetcode.com/problems/my-calendar-i/description/
+
+## Trim a BST: TC - O(), SC - O()
+- https://leetcode.com/problems/trim-a-binary-search-tree/description/
