@@ -63,3 +63,9 @@
 - if (!root) return false
 - if (seen.count(k - root->val)) return true
 - seen.insert(root->val) and return find(root->left, k, seen) || find(root->right, k, seen);
+
+## Minimum Distance Between BST Nodes: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/minimum-distance-between-bst-nodes/description/
+- initialize result as INT_MAX and TreeNode prev as nullptr, call helper function with root, prev, res
+- inorder traversal, call helper for root->left and if (prev) res = min(res, root->val - prev->val)
+- set prev = root and call helper for root->right
