@@ -43,3 +43,42 @@
 - Use Morris Traversal, but connect the rightmost node of the left child to the right child of the root
 - while (root) -> if (root->left) go to rightmost node, rightmost->right = root->right, root->right = root->left, root->left = null
 - Set root = root->right everytime
+
+## Path Sum III: TC - O(N), SC - O(N)
+- https://leetcode.com/problems/path-sum-iii/description/
+- using prefix sum, we keep unordered_map<long long, int> mpp
+- mpp[0] = 1 initially and count = 0 and call the helper function
+- base case: if !root return, pathSum += root->val and count += mpp[pathSum-targetSum]
+- mpp[pathSum]++ and call helper function for root->left, root->right and mpp[pathSum]-- to remove this particular path
+
+## Maximum Difference Between Node and Ancestor: TC - (N), SC - O(H)
+- https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
+- call the helper function with (root, root->val, root->val)
+- base case: if (!root) return maxi-mini
+- maxi is max(maxi, root->val), mini is min(mini, root->val)
+- call helper function with root->left, maxi, mini and root->right, maxi, mini
+- return max(left, right)
+
+## Delete Nodes and Return Forest: TC - O(n), SC - (n)
+- https://leetcode.com/problems/delete-nodes-and-return-forest/description/
+- unordered_set<int> st; insert all values in to_delete to st
+- create a vector<TreeNode*> forest and call the helper function with root, st, forest
+- base case: if (!root) return nullptr; postorder traversal
+- call helper(root->left, st, forest) and helper(root->right, st, forest)
+- if st has the root->val, implies root should be deleted and its left and right child should be pushed to forest if not null
+- delete root and return nullptr and return root if should not be deleted
+
+## Find Duplicate Subtrees: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/find-duplicate-subtrees/description/
+- unordered_map<string, int> mpp and unordered_map<int, int> cnt;
+- if (!root) return 0 and we identify if trees are same if the triplet (ID of the left subtree, root value, ID of the right subtree)
+- triplet = to_string(helper(root->left, mpp, cnt, res)) + to_string(root->val) + to_string(helper(root->right, mpp, cnt, res))
+- if (mpp[triplet] == 0) mpp[triplet] = mpp.size()+1
+- id = mpp[triplet] and if count[id] == 2, add it to the result and return id
+
+## Distribute Coins in BT: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/distribute-coins-in-binary-tree/description/
+- initialize moves to 0 and call helper function with root, moves
+- postorder traversal, call root->left and root->right and if (!root) return 0
+- moves += abs(leftCoins) + abs(rightCoins)
+- return (root->val - 1) + leftCoins + rightCoins
