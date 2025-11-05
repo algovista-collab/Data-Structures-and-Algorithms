@@ -48,3 +48,18 @@
 - if (start > end) return nullptr, idx = start + (end - start) / 2;
 - Create a TreeNode with nums[idx] and call constructTree for left and right
 - left: constructTree(nums, start, idx-1) and right: constructTree(nums, idx+1, end)
+
+## Kth Smallest Element in a BST: TC - O(N), SC - O(N)
+- https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+- keep ans = -1, helper(root, k, ans)
+- base case: if (!root || ans != -1) return;
+- recursive call helper(root->left, k, ans) and count++
+- if count == k: ans = root->val and return
+- else helper(root->right, k, ans)
+
+## Two Sum IV - Input is a BST: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
+- create unordered_set<int> seen; and call find(root, k, seen)
+- if (!root) return false
+- if (seen.count(k - root->val)) return true
+- seen.insert(root->val) and return find(root->left, k, seen) || find(root->right, k, seen);
