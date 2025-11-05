@@ -3,7 +3,7 @@
 - A Eulerian Path is a path that uses every edge exactly once, Hierholzer’s Algorithm (used for Eulerian paths)
 - A Eulerian Circuit is a Eulerian Path that starts and ends at the same vertex.
 - create unordered_map<string, priority_queue<string, vector<string>, greater<string>>> graph
-- graph stores starting airport as key and destination airports in the priority_queue that keeps the lexicographically smallest airport at the top
+- graph stores starting airport as key and destination airports in the priority_queue keeps the lexicographically smallest airport at the top
 - run a for loop over tickets and push ticket[1] to the graph[ticket[0]] and call the dfs function with JFK, graph and result
 - in the dfs function, run a while loop until the destination queue becomes empty and inside a loop call the dfs with top element
 - once out of the loop, push the source airport to the result and in the main function reverse the result before returning
