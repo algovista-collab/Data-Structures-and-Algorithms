@@ -9,3 +9,15 @@
 - buckets[bucket] = nums[i]; and if (i >= indexDiff) buckets.erase(getId(nums[i-indexDiff], w));
 
 >> Revise: https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/143/appendix-height-balanced-bst/1021/
+
+## Recover BST: TC - O(N), SC - O(1)
+- https://leetcode.com/problems/recover-binary-search-tree/description/
+- Using Morris Traversal: During inorder traversal, detect two nodes where the order breaks:
+- If root->val < pred->val, we’ve found an inversion.
+- First inversion → x = pred
+- Second inversion → y = root
+- After traversal, swap values of x and y.
+
+## Merge BSTs to Create Single BST: TC - O(), SC - O()
+- https://leetcode.com/problems/merge-bsts-to-create-single-bst/description/
+- 
