@@ -69,3 +69,10 @@
 - initialize result as INT_MAX and TreeNode prev as nullptr, call helper function with root, prev, res
 - inorder traversal, call helper for root->left and if (prev) res = min(res, root->val - prev->val)
 - set prev = root and call helper for root->right
+
+## Range Sum of BST: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/range-sum-of-bst/description/
+- helper function will have 3 lines:
+- if (root->val < high) helper(root->right, sum, low, high);
+- if (root->val > low) helper(root->left, sum, low, high);
+- if (root->val >= low && root->val <= high) sum += root->val;
