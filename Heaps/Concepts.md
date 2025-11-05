@@ -32,3 +32,48 @@ void convertMaxHeap(int arr[], int N)
     }
 }
 ```
+
+## Heapsort: TC - O(N * logN), SC - O(1)
+```cpp
+// Function to heapify a subtree rooted at index i
+void MaxHeapify(int arr[], int N, int i) {
+    int largest = i;        // Initialize largest as root
+    int l = 2*i + 1;        // left child
+    int r = 2*i + 2;        // right child
+
+    // If left child is larger than root
+    if (l < N && arr[l] > arr[largest])
+        largest = l;
+
+    // If right child is larger than largest so far
+    if (r < N && arr[r] > arr[largest])
+        largest = r;
+
+    // If largest is not root
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+        // Recursively heapify the affected subtree
+        MaxHeapify(arr, N, largest);
+    }
+}
+
+// Function to build a max heap
+void BuildMaxHeap(int arr[], int N) {
+    for (int i = (N-2)/2; i >= 0; i--) {
+        MaxHeapify(arr, N, i);
+    }
+}
+
+// HeapSort function
+void HeapSort(int arr[], int N) {
+    BuildMaxHeap(arr, N);
+
+    // One by one extract elements from heap
+    for (int i = N-1; i > 0; i--) {
+        // Move current root to end
+        swap(arr[0], arr[i]);
+        // call max heapify on the reduced heap
+        MaxHeapify(arr, i, 0);
+    }
+}
+```
