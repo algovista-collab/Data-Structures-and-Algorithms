@@ -35,7 +35,7 @@
 - insert the vertex to visited and loop over its edges, if not visited yet call the dfs again
 - if destination is not found at all, return false
 
-## All paths from source to target: (Yet to understand time and space complexity)
+## All paths from source to target: TC - O(2^V * V), SC - O(V)
 - https://leetcode.com/problems/all-paths-from-source-to-target/description/
 - keep a path and result, call dfs function with source, target, path, result, graph
 - add the source to path and if source == destination, add path to the result
