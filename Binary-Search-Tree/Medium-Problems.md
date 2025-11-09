@@ -27,8 +27,13 @@
 ## My Calendar II: TC - O(), SC - O()
 - https://leetcode.com/problems/my-calendar-ii/description/
 
-## My Calender I: TC - O(), SC - O()
+## My Calender I: TC - O(N*logN), SC - O(N)
+- lower_bound in set is binary search takes logN time and logN after inserting the event
 - https://leetcode.com/problems/my-calendar-i/description/
+- We keep set<pair<int,int>> calendar as data structure to store start and end time.
+- store time in const pair<int,int> event and check calendar.lower_bound(event), will return the element in the calendar whose start time is greater or equal to event's start time
+- check if nextEvent whose start time is greater has an endtime which is less than event's endtime. There is a overlapping, return false
+- check if prev(nextEvent) has an endTime which is greater than event's starttime, return false, else insert return true
 
 ## Trim a BST: TC - O(N), SC - O(H)
 - https://leetcode.com/problems/trim-a-binary-search-tree/description/
