@@ -26,7 +26,10 @@
 
 ## My Calendar II: TC - O(N), SC - O(N)
 - https://leetcode.com/problems/my-calendar-ii/description/
-- 
+- Line Sweep algorithm can be used to solve both calendar I and II, it keep a an ordered map - map<int, int>
+- If 2 or more intervals fall in the same booking, then their start time like 10, 15, 17 come first whose value is 1 and end time -1
+- when you run a for loop, count is incremented and initial start time are in the beginning and if there is overlap, count will be more than 2
+- when count is more than 2, mpp[start]-- and mpp[end]++ and return false
 
 ## My Calender I: TC - O(N*logN), SC - O(N)
 - lower_bound in set is binary search takes logN time and logN after inserting the event
