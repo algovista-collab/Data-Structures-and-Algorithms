@@ -30,5 +30,8 @@
 ## My Calender I: TC - O(), SC - O()
 - https://leetcode.com/problems/my-calendar-i/description/
 
-## Trim a BST: TC - O(), SC - O()
+## Trim a BST: TC - O(N), SC - O(H)
 - https://leetcode.com/problems/trim-a-binary-search-tree/description/
+- if (root->val > high) return trimBST(root->left, low, high);
+- if (root->val < low) return trimBST(root->right, low, high);
+- root->left = trimBST(root->left, low, high); root->right = trimBST(root->right, low, high);
