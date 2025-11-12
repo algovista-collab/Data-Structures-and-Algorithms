@@ -22,3 +22,9 @@
 - we keep minHeap and add the end time of the first meeting and run a for loop from i = 1
 - if the second meeting start time is greater than first meeting end time, then it starts later so we can use the same room hence we pop from minHeap
 - else we add the second meeting end time to the heap and so on. The size of the heap is the rooms we need.
+
+## K Closest Points to Origin: O(N*logK), SC - (N)
+- https://leetcode.com/problems/k-closest-points-to-origin/description/
+- calculate the distance and push it to the maxHeap as {distance, index}
+- pop from the maxHeap if the size is > k and run a loop until heap is empty
+- push the points[idx] to answer vector and return the answer
