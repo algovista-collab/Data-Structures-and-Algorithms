@@ -23,8 +23,13 @@
 - if the second meeting start time is greater than first meeting end time, then it starts later so we can use the same room hence we pop from minHeap
 - else we add the second meeting end time to the heap and so on. The size of the heap is the rooms we need.
 
-## K Closest Points to Origin: O(N*logK), SC - (N)
+## K Closest Points to Origin: TC - O(N*logK), SC - (N)
 - https://leetcode.com/problems/k-closest-points-to-origin/description/
 - calculate the squared distance and push it to the maxHeap as {distance, index}
 - pop from the maxHeap if the size is > k and run a loop until heap is empty
 - push the points[idx] to answer vector and return the answer
+
+## Minimum Cost to Connect Sticks: TC - O(N*logN), SC - O(N)
+- https://leetcode.com/problems/minimum-cost-to-connect-sticks/description/
+- using greedy algorithm: push all the sticks to minHeap, run a while loop until the minHeap size > 1
+- remove the top 2 elements, add it to the cost and push it to the minHeap and finally return the cost
