@@ -25,6 +25,6 @@
 
 ## K Closest Points to Origin: O(N*logK), SC - (N)
 - https://leetcode.com/problems/k-closest-points-to-origin/description/
-- calculate the distance and push it to the maxHeap as {distance, index}
+- calculate the squared distance and push it to the maxHeap as {distance, index}
 - pop from the maxHeap if the size is > k and run a loop until heap is empty
 - push the points[idx] to answer vector and return the answer
