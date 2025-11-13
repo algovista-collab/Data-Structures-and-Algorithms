@@ -21,8 +21,13 @@
 ## Merge BSTs to Create Single BST: TC - O(), SC - O()
 - https://leetcode.com/problems/merge-bsts-to-create-single-bst/description/
   
-## Stock Price Fluctuation: TC - O(), SC - O()
+## Stock Price Fluctuation: TC - O(logN), SC - O(N)
 - https://leetcode.com/problems/stock-price-fluctuation/description/
+- keep unordered_map (key as timestamp and value as price) and multiset to store price in ascending order
+- maximum and minimum function will return *set.rbegin() and *set.begin() respectively
+- current returns map[latestTime]
+- update will check if the timestamp already exists and erase the oldPrice if already present as a correction
+- update the latestTime if timestamp is greater i.e. latest price's timestamp
 
 ## My Calendar II: TC - O(N), SC - O(N)
 - https://leetcode.com/problems/my-calendar-ii/description/
