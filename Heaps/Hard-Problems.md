@@ -13,4 +13,12 @@
 - push all the listnode heads in lists to pq and run a loop until pq is empty
 - pop from pq, put it to result and if the next is present push it to the pq
 
-## 
+## Single Threaded CPU: TC - O(N*logN), SC - O(N)
+- https://leetcode.com/problems/single-threaded-cpu/description/
+- keep a minHeap to store {processTime, index}
+- keep a vector to store enqueTime, processTime, index and sort it based on enqueTime
+- currTime  = 0 and taskIndex = 0, run a while loop until tasksIndex < tasks.size() or heap is not empty
+- if the heap is empty which means CPU is idle and currTime is less than task enqueTime, make currTime = enqueTime
+- push all the tasks whose enque time is less than currTime to process them next in the loop
+- push them to the heap and increment the taskIndex
+- pop the heap and increase the currTime to the processTime and push the index to the answer
