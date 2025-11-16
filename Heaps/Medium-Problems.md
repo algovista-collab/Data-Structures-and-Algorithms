@@ -17,3 +17,11 @@
 - after every pair, (i+1, j) or (i, j+1) is the smallest and hence we push them to the heap
 - first push the pair (0,0) in minHeap and visited, run a loop until k==0 and minHeap is empty
 - pop and put the pair in the answer vector, check the conditions for next 2 pairs and push to the heap
+
+## Merge intervals: TC - O(N*logn), SC - O(n)
+- https://leetcode.com/problems/merge-intervals/description/
+- sort the intervals based on startTime and loop over intervals
+- if merged is empty or merged.back()[1] is less than interval[0] then there is no overlap so push the interval
+- else update the merged.back()[1] to max(merged.back()[1], interval[1])
+
+##
