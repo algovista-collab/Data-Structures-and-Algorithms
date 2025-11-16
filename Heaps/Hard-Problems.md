@@ -25,4 +25,10 @@
 
 ## Process Tasks using Servers:
 - https://leetcode.com/problems/process-tasks-using-servers/description/
-- 
+- keep 2 priority queues - available stores weight and serverIndex, busy stores freeTime of server and its index
+- push all the server weight and index to available and keep long long time = 0 to begin
+- run a for loop over all tasks and res(m) vector for the result
+- Case 1: servers to be freed
+  * if busy is not empty and its top servers's free time is <= time, it can be freed, hence pop and push it to available
+- Case 2: if available is empty, shift the time to the top server's free time and pop all servers from busy if their freeTime <= time and push to available
+- pop the available server and push its index to the result and push time+tasks[i], serverIndex to busy
