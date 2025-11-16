@@ -24,4 +24,8 @@
 - if merged is empty or merged.back()[1] is less than interval[0] then there is no overlap so push the interval
 - else update the merged.back()[1] to max(merged.back()[1], interval[1])
 
-##
+## Insert Interval: TC - O(n), SC - O(n)
+- https://leetcode.com/problems/insert-interval/description/
+- using binary search, if (intervals[mid][0] < newInterval[0]) left = mid+1 else right = mid-1
+- once the spot is known, insert the newInterval like intervals.insert(intervals.begin()+left, newInterval)
+- do the same as in the problem merge intervals
