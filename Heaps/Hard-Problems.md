@@ -22,3 +22,7 @@
 - push all the tasks whose enque time is less than currTime to process them next in the loop
 - push them to the heap and increment the taskIndex
 - pop the heap and increase the currTime to the processTime and push the index to the answer
+
+## Process Tasks using Servers:
+- https://leetcode.com/problems/process-tasks-using-servers/description/
+- 
