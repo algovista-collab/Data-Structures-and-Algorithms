@@ -23,7 +23,7 @@
 - push them to the heap and increment the taskIndex
 - pop the heap and increase the currTime to the processTime and push the index to the answer
 
-## Process Tasks using Servers:
+## Process Tasks using Servers: TC - O(M*logN + N*logN), SC - O(M+N)
 - https://leetcode.com/problems/process-tasks-using-servers/description/
 - keep 2 priority queues - available stores weight and serverIndex, busy stores freeTime of server and its index
 - push all the server weight and index to available and keep long long time = 0 to begin
@@ -32,3 +32,11 @@
   * if busy is not empty and its top servers's free time is <= time, it can be freed, hence pop and push it to available
 - Case 2: if available is empty, shift the time to the top server's free time and pop all servers from busy if their freeTime <= time and push to available
 - pop the available server and push its index to the result and push time+tasks[i], serverIndex to busy
+
+## IPO: TC - O(n*logn), SC - O(n)
+- https://leetcode.com/problems/ipo/description/
+- vector<pair<int,int>> pairs and pairs.emplace_back(capital[i], profits[i])
+- pairs will store the capital and profit of a project and sort it to store capital in ascending order
+- keep a pointer to first project of pairs and maxHeap to store affordable projects with higher profit at the top
+- run a for loop k times and push every project whose capital <= w to the maxHeap
+- if maxHeap is empty, there are no projects available hence break, else pop and add the profit to the w
