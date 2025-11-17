@@ -50,3 +50,5 @@
 - Step 2: if window exceeds k (i >= k) find(nums[i-k]) in small, if found erase (small.erase(small.find(nums[i-k]) else erase from large
 - Step 3: sets become imbalance, remove from either of them and put it to the other (while small.size() > large.size() + 1)
 - Step 4: find a median when i >= k-1, if k is even then put the average else *small.rbegin()
+- Multiset is used instead of PQ because we need to remove nums[i-k] which is an arbitrary element and removing from PQ is not efficient
+- Multiset, insert is logk, find is logk, erase by iterator is O(1)
