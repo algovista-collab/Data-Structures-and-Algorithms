@@ -40,3 +40,13 @@
 - keep a pointer to first project of pairs and maxHeap to store affordable projects with higher profit at the top
 - run a for loop k times and push every project whose capital <= w to the maxHeap
 - if maxHeap is empty, there are no projects available hence break, else pop and add the profit to the w
+
+## Sliding Window Median: TC - O(N*logK), SC - O(K)
+- https://leetcode.com/problems/sliding-window-median/description/
+- each loop has erase, insert in multisets and loop runs over n times hence N*logK is the time complexity
+- keep 2 multisets, small for first half of the array and large for second half of the array
+- both multisets should be balanced, i.e. small.size() == large.size() + 1 or small.size() == large.size()
+- Step 1: inserting elements either in small or large, if small is empty or current element is smaller than *small.rbegin(), insert to small else to large
+- Step 2: if window exceeds k (i >= k) find(nums[i-k]) in small, if found erase (small.erase(small.find(nums[i-k]) else erase from large
+- Step 3: sets become imbalance, remove from either of them and put it to the other (while small.size() > large.size() + 1)
+- Step 4: find a median when i >= k-1, if k is even then put the average else *small.rbegin()
