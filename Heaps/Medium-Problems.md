@@ -29,3 +29,8 @@
 - using binary search, if (intervals[mid][0] < newInterval[0]) left = mid+1 else right = mid-1
 - once the spot is known, insert the newInterval like intervals.insert(intervals.begin()+left, newInterval)
 - do the same as in the problem merge intervals
+
+## Minimum Number of Arrows to Burst Balloons: TC - O(N*logN), SC - O(1)
+- https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
+- shoot the balloons those come under maximum xEnd, hence sort by xEnd and initialize arrow = 1 and end to first points[1]
+- run a loop over points, if the current xStart > previous xEnd, then we need new arrow and also update end to current end
