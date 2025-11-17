@@ -4,7 +4,7 @@
 - **Postorder**: We go to the leaf node of one child, then traverse back to root and so on
 - **Level**: Similar to Binary Tree
 
-## Preorder
+## Preorder and Postorder
 ```cpp
 vector<int> preorder(Node* root) {
         if (!root) return {};
@@ -14,9 +14,17 @@ vector<int> preorder(Node* root) {
         while (!st.empty()) {
             Node* node = st.top(); st.pop();
             res.push_back(node->val);
+            # preorder
             for (int i = node->children.size()-1; i >= 0; i--) {
                 st.push(node->children[i]);
             }
+
+            # postorder
+            for (Node* child: node->children) {
+                st.push(child);
+            }
         }
+        # postorder
+        reverse(res.begin(), res.end());
         return res;
 ```
