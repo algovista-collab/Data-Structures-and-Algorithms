@@ -28,3 +28,12 @@ vector<int> preorder(Node* root) {
         reverse(res.begin(), res.end());
         return res;
 ```
+
+## Max Depth
+```cpp
+        int depth = 0;
+        for (Node* node: root->children) {
+            depth = max(depth, maxDepth(node));
+        }
+        return 1+depth;
+```
