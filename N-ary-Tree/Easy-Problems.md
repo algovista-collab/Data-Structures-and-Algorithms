@@ -4,3 +4,7 @@
 - **Postorder**: We go to the leaf node of one child, then traverse back to root and so on
 - **Level**: Similar to Binary Tree
 
+## Preorder
+cpp```
+
+```
