@@ -5,6 +5,18 @@
 - **Level**: Similar to Binary Tree
 
 ## Preorder
-cpp```
-
+```cpp
+vector<int> preorder(Node* root) {
+        if (!root) return {};
+        stack<Node*> st;
+        vector<int> res;
+        st.push(root);
+        while (!st.empty()) {
+            Node* node = st.top(); st.pop();
+            res.push_back(node->val);
+            for (int i = node->children.size()-1; i >= 0; i--) {
+                st.push(node->children[i]);
+            }
+        }
+        return res;
 ```
