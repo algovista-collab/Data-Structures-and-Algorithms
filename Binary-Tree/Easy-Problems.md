@@ -29,7 +29,7 @@
 ### 🔹 Postorder
 - Use a stack + visited flag 
   → Go left pushing nodes to stack
-  → When null, check if right exists → If yes, then set curr as curr->right, If no, then add to the result, set flag as curr, pop and set curr as null
+  → When null, check if right exists → If yes, then set curr as curr->right, If no or visited==curr->right, then add to the result, set flag as curr, pop and set curr as null
   
 ---
 
