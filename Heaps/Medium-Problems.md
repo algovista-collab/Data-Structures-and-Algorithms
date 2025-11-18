@@ -9,8 +9,14 @@
 - Use quick select,
 
 ## The K Weakest Rows in a Matrix: TC - , SC - 
-- https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/description/ 
+- https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/description/
 
+## Task Scheduler
+- https://leetcode.com/problems/task-scheduler/description/
+
+## Hands of Straights
+- https://leetcode.com/problems/hand-of-straights/description/
+  
 ## Find K Pairs with Smallest Sums: TC - O(k*logk), SC - O(k)
 - https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
 - minHeap to store the sum and pair of indices and visited to store the pair of indices
