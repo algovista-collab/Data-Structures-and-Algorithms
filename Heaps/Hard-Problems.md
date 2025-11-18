@@ -52,3 +52,13 @@
 - Step 4: find a median when i >= k-1, if k is even then put the average else *small.rbegin()
 - Multiset is used instead of PQ because we need to remove nums[i-k] which is an arbitrary element and removing from PQ is not efficient
 - Multiset, insert is logk, find is logk, erase by iterator is O(1)
+
+## Smallest Range covering elements from K Lists: TC - O(NlogK), SC - O(K)
+- https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/
+- K is the number of lists and we always store only one number from each list in the PQ, hence SC is O(K)
+- Keep a PQ with pair of pair - {ele from each list, {row, col}}
+- keep maxValue as INT_MIN, rangeStart as 0 and rangeEnd as INT_MAX initially
+- Since every list is in the ascending order, we add first element initially from every list to PQ and maxVal is updated here
+- run a while loop until PQ size is same as nums size and PQ top element always has minVal
+- if maxVal - minVal < rangeEnd - rangeStart then update the range
+- add another element from the same row if exists to PQ and update the maxVal
