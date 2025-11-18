@@ -34,3 +34,11 @@
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
 - shoot the balloons those come under maximum xEnd, hence sort by xEnd and initialize arrow = 1 and end to first points[1]
 - run a loop over points, if the current xStart > previous xEnd, then we need new arrow and also update end to current end
+
+## Maximum Number of Events that can be attended: TC - O(N*logN), SC - O(N)
+- https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
+- using greedy algorithm and minHeap, first sort the events based on their start day
+- start with i = 1, i.e. day 1 and run a loop until j < n or pq is not empty
+- put all the events end day whose start day is <= i (we can consider attending those events), minHeap keeps the event with smaller end day
+- remove all the events whose end day < i (we cannot attend those events)
+- if pq is still not empty, increment the answer
