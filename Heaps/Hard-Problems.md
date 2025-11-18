@@ -5,6 +5,9 @@
 ## Furthest Building You can Reach
 - https://leetcode.com/problems/furthest-building-you-can-reach/description/
 
+## Design Twitter
+- https://leetcode.com/problems/design-twitter/description/
+
 ## Merge k Sorted Lists: TC - O(N * logk), SC - O(k)
 - https://leetcode.com/problems/merge-k-sorted-lists/description/
 - lambda function that returns true if l should come after r
