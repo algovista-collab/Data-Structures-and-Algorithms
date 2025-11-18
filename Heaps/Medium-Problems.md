@@ -42,3 +42,9 @@
 - put all the events end day whose start day is <= i (we can consider attending those events), minHeap keeps the event with smaller end day
 - remove all the events whose end day < i (we cannot attend those events)
 - if pq is still not empty, increment the answer
+
+## Non-overlapping intervals: TC - O(N*logN), SC - O(N)
+- https://leetcode.com/problems/non-overlapping-intervals/description/
+- We remove the intervals with higher end time, hence sort the intervals by their endtime
+- initially k=INT_MIN, run a loop over intervals and if the start time is >= k then there is no overlap, set k = curr end time
+- else increment the answer because there is overlap and we are removing the intervals with higher end time 
