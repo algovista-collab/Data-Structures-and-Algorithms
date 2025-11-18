@@ -109,10 +109,12 @@ int maxDepth(TreeNode* root) {
 
 ## Populate the next pointers: TC - O(n), SC - O(1)
 - https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
-- start with root, loop until its left child becomes null, inside the loop, loop again until head becomes null
-- in the inner loop, head->left->next = head->right. if (head->next) head->right->next = head->next->left. Then assign, head = head->next
-- outside the inner loop, loop the outer loop over root = root->left
-
+- Since it is a Perfect BT, if left child is not present then current level is the last level, there is no right child
+- start with leftMost = root and run a while loop until leftMost->left, set level = leftMost
+- do 2 things inside: while (head), head->left->next = head->right. if (head->next) head->right->next = head->next->left.
+- Then assign, head = head->next (go to next node in the same level)
+- outside the inner loop, set leftMost = leftMost->left
+  
 ## Count univalue subtrees
 - https://leetcode.com/problems/count-univalue-subtrees/description/
 - Helper function called with root and count variable
