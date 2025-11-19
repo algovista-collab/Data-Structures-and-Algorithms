@@ -19,3 +19,10 @@
 - keep a unordered_map of slope and its count, run a for loop over points and initialize the map
 - run inner for loop and calculate dx and dy for all the points for the given point in the outer for loop
 - slope = atan2(dy,dx) and store in the map and update res = max(res, slope[s]+1)
+
+## Valid Square: TC - O(1), SC - O(1)
+- https://leetcode.com/problems/valid-square/description/
+- check if all the points are distinct by storing them in the set<pair<int,int>> and return false if size is not 4
+- 4 distinct points form a valid square when all the sides are equal and diagonals also have same length
+- we calculate lengths of all 4 sides and 2 diagonals: square length = (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2) and insert to set<int>
+- if the set size is 2 (1 unique length for 4 sides and 1 unique length for 2 diagonals) then they form a square else return false
