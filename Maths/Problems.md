@@ -11,3 +11,11 @@
 - INT_MAX is 2^31-1 = 2147483647 and INT_MIN  is -2^31 = -2147483648
 - if reversed > INT_MAX / 10 i.e. reversed = 214748365 (just one more) but we multiply by 10 in the next step = 2147483650 > INT_MAX
 - if reversed == INT_MAX / 10, reversed = 214748364 then *10 + pop can lead to overflow, so we check if pop > 7, similar checking for negative numbers
+
+## Max Points on a line: TC - O(n²), SC - O(n)
+- https://leetcode.com/problems/max-points-on-a-line/description/
+- distinct lines are identified by their slope and since double division is not precise, we use atan2 function (points on the same line has same atan2)
+- atan2 is the angle measure between the positive x-axis and the ray from the origin to the point in the cartesian plane (https://en.wikipedia.org/wiki/Atan2)
+- keep a unordered_map of slope and its count, run a for loop over points and initialize the map
+- run inner for loop and calculate dx and dy for all the points for the given point in the outer for loop
+- slope = atan2(dy,dx) and store in the map and update res = max(res, slope[s]+1)
