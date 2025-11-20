@@ -14,3 +14,10 @@
 - if p1 == 0, swap p1,p0 and increment both
 - if p1 == 2, swap p1,p2 and decrement p2
 - if p1 == 1, increment p1
+
+## Pow(x, n): TC - O(logn), SC - O(1)
+- https://leetcode.com/problems/powx-n/description/
+- run a loop until n > 0, keep ans = 1 initially
+- if n%2 == 1, we need to keep x separated i.e. ans = ans * x
+- n = n/2 and since n gets divided by 2 everytime, take square x = x * x
+- this is multiplied with ans for the above condition when n%2 == 1
