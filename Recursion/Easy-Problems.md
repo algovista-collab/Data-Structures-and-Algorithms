@@ -1,3 +1,8 @@
+## Space Complexity: Recursion
+- The two main parts of the space consumption is recursion related space and non recursion related space
+- Recursion related space refers to the memory cost incurred directly by the recursion that holds 3 pieces of information: returning address of the function call, parameters passed and the local variables
+- Non recursion related space refers to global variables
+
 ## Reverse Strings: TC - O(N), SC - O(N for recursion)
 - https://leetcode.com/problems/reverse-string/description/
 - call helper with start and end, simply swap the s[start] and s[end]
